@@ -19,7 +19,8 @@ body.dark{
 body {
     line-height: 1.5;
     font-size: 16px;
-    font-family: 'Poppins' sans-serif;
+    font-family: 'Poppins', sans-serif;
+    
 }
 
 * {
@@ -127,8 +128,25 @@ ul {
     border: none;
     background: var(--skin-color);
     transition: all 0.3s ease;
+   
 }
 
+.but{
+    font-size: 16px;
+    /* font-weight:500px ; */
+    padding: 12px 35px;
+    color: white;
+    border-radius: 40px;
+    display: inline-block;
+    white-space: nowrap;
+    border: none;
+    background: var(--skin-color);
+    transition: all 0.3s ease;  
+    width: 200px;
+}
+.but:hover{
+    transform: scale(1.05); 
+}
 .btn:hover {
     transform: scale(1.05);
     /* if u want to make the btn size large when it is hover */
@@ -627,17 +645,21 @@ h3.my-proffesion.job {
 
 
 .popup {
-   position: fixed;
-   top: 40%;
-   left: 50%;
-   transform: translate(-50%,-50%);
-   width:auto;
-   padding: 50px;
-   box-shadow: 0 5px 30px rgba(0,0,0,.30);
-   background-color: var(--bg-black-100); 
-   visibility: hidden;
-   opacity: 0;
-   transition: 0.5s;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    max-width: 90%; /* Limit width to 90% of the viewport */
+    padding: 20px; /* Decrease padding for smaller screens */
+    box-shadow: 0 2px 10px rgba(0,0,0,.2); /* Reduce box shadow for lighter effect */
+    background-color: var(--bg-black-100); 
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+    z-index: 1000;
+ }
+ .popup video {
+    max-width: 450px; /* Ensure video doesn't exceed container width */
 }
 .popup1.active,
 .popup2.active,
@@ -658,7 +680,7 @@ h3.my-proffesion.job {
 .popup5.active h2,
 .popup6.active h2{
     color: var(--skin-color);
-    margin-top: 25px;
+    margin-top: 64px;
     font-size: 30px;
     text-decoration: underline;
 }
@@ -834,6 +856,27 @@ button{
     .about .about-content .personal-info{
         flex: 0 0 100%;
         max-width: 100%;
+    }
+}
+@media (max-width: 768px) {
+    .popup-head{
+        display: block;
+        margin-bottom: 10px;
+    }
+     
+}
+@media (max-width: 768px) {
+    .popup {
+       max-width: 95%; /* Further reduce width for smaller devices */
+       padding: 10px; /* Adjust padding for smaller screens */
+       box-shadow: 0 1px 5px rgba(0,0,0,.1); /* Fine-tune box shadow */
+       transform: translate(-50%, -40%);
+    }
+ }
+ @media (max-width: 768px) {
+    .popup video {
+        width: 250px; /* Adjust video width for smaller screens */
+
     }
 }
 
